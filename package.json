@@ -1,0 +1,65 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "@utxoswap/swap-sdk-js",
+  "author": "",
+  "module": "dist/swap-sdk-js.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/swap-sdk-js.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/swap-sdk-js.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "dependencies": {
+    "@ckb-lumos/lumos": "^0.23.0",
+    "@nervosnetwork/ckb-sdk-core": "0.109.1",
+    "@nervosnetwork/ckb-sdk-rpc": "0.109.1",
+    "@nervosnetwork/ckb-sdk-utils": "0.109.1",
+    "@nervosnetwork/ckb-types": "0.109.1",
+    "@rgbpp-sdk/ckb": "^0.4.0",
+    "axios": "^1.7.2",
+    "bignumber.js": "^9.1.2"
+  },
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^11.1.4",
+    "husky": "^9.0.11",
+    "size-limit": "^11.1.4",
+    "tiny-invariant": "^1.3.3",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.2"
+  }
+}
