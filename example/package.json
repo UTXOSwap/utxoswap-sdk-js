@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
-    "@ckb-ccc/ccc": "^0.0.10-alpha.",
-    "@ckb-ccc/connector-react": "^0.0.10-alpha.",
-    "@ckb-ccc/core": "^0.0.10-alpha.",
+    "@ckb-ccc/ccc": "^0.0.11-alpha.2",
+    "@ckb-ccc/connector-react": "^0.0.11-alpha.2",
+    "@ckb-ccc/core": "^0.0.11-alpha.2",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@uiw/react-github-corners": "^1.5.16",
