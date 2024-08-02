@@ -87,4 +87,4 @@ const intentTxHash = await pool.swapWithExactInput(
 
 ## Example
 
-[You can find react example here](https://github.com/UTXOSwap/swap-sdk/tree/main/example)
+[You can find react example here](https://github.com/UTXOSwap/utxoswap-sdk-js/tree/main/example)

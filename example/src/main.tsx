@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <GitHubCorners
           position="right"
           size={120}
-          href="https://github.com/UTXOSwap/swap-sdk.git"
+          href="https://github.com/UTXOSwap/utxoswap-sdk-js"
         />
       </ccc.Provider>
     </ChakraProvider>
