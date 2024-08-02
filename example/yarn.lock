@@ -1030,42 +1030,44 @@
   resolved "https://registry.yarnpkg.com/@chakra-ui/visually-hidden/-/visually-hidden-2.2.0.tgz#9b0ecef8f01263ab808ba3bda7b36a0d91b4d5c1"
   integrity sha512-KmKDg01SrQ7VbTD3+cPWf/UfpF5MSwm3v7MWi0n5t8HnnadT13MF0MJCDSXbBWnzLv1ZKJ6zlyAOeARWX+DpjQ==
 
-"@ckb-ccc/ccc@0.0.7-alpha.1", "@ckb-ccc/ccc@^0.0.7-alpha.1":
-  version "0.0.7-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ckb-ccc/ccc/-/ccc-0.0.7-alpha.1.tgz#5283e1e2ad211cfe5be3a761bc68176689518843"
-  integrity sha512-J0E32gIcO6cNFOWUgYkXCfBkHrxyu52MPmsAP/4MuKjdjw9DHgSqm1ygdCWJEfGnVzAMy69hX236fJvv22k1vQ==
+"@ckb-ccc/ccc@0.0.11-alpha.2", "@ckb-ccc/ccc@^0.0.11-alpha.2":
+  version "0.0.11-alpha.2"
+  resolved "https://registry.yarnpkg.com/@ckb-ccc/ccc/-/ccc-0.0.11-alpha.2.tgz#f7a1df5d9d22bda62eccf4f405050e645fad161a"
+  integrity sha512-pN61UCfHU65LN+4PE7Zu48lf3gARX4h/0W/phU8IOzTDKqvoClAQje8PmEenO6ZKUBpqlImgYRR+r4oVEo+UsA==
   dependencies:
-    "@ckb-ccc/core" "0.0.7-alpha.1"
-    "@ckb-ccc/eip6963" "0.0.7-alpha.1"
-    "@ckb-ccc/joy-id" "0.0.7-alpha.1"
-    "@ckb-ccc/nip07" "0.0.7-alpha.1"
-    "@ckb-ccc/okx" "0.0.7-alpha.1"
-    "@ckb-ccc/uni-sat" "0.0.7-alpha.1"
+    "@ckb-ccc/core" "0.0.11-alpha.2"
+    "@ckb-ccc/eip6963" "0.0.11-alpha.2"
+    "@ckb-ccc/joy-id" "0.0.11-alpha.2"
+    "@ckb-ccc/nip07" "0.0.11-alpha.2"
+    "@ckb-ccc/okx" "0.0.11-alpha.2"
+    "@ckb-ccc/uni-sat" "0.0.11-alpha.2"
+    "@ckb-ccc/utxo-global" "0.0.11-alpha.2"
 
-"@ckb-ccc/connector-react@^0.0.7-alpha.1":
-  version "0.0.7-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ckb-ccc/connector-react/-/connector-react-0.0.7-alpha.1.tgz#752f3e1f81361737ec31cebeffbf074c03cc8eb4"
-  integrity sha512-6t/Q2agRGEeOtzXo6syvXdUXMY0jIoBPL5xupbFU3kUxOGKbz6I8HUB5cVPEDG9CCI7apAbzIxxvVcy1avZdeQ==
+"@ckb-ccc/connector-react@^0.0.11-alpha.2":
+  version "0.0.11-alpha.2"
+  resolved "https://registry.yarnpkg.com/@ckb-ccc/connector-react/-/connector-react-0.0.11-alpha.2.tgz#5ac306ed2083914867ba3310b2e23758bafc78b3"
+  integrity sha512-OgzlQwDh+7e2fmyAp+0cpPWwdAXbG7BZE1661IwZDpsuQuH5ptRPbh3FS3bDYIDHsQvpa6k1VZ2IXe3gNramZw==
   dependencies:
-    "@ckb-ccc/connector" "0.0.7-alpha.1"
+    "@ckb-ccc/connector" "0.0.11-alpha.2"
     "@lit/react" "^1.0.5"
     react "^18"
 
-"@ckb-ccc/connector@0.0.7-alpha.1":
-  version "0.0.7-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ckb-ccc/connector/-/connector-0.0.7-alpha.1.tgz#eb62138f04ba3e5d7023b5920038a0d655838c66"
-  integrity sha512-tgsFpsGwcIrqov8LWWX6v+ux4ADB65/FndSGMN590URRsKYA+KQz9WXtZpxRzOqd7bx7FeoDx+V9rZ+jKhw1VQ==
+"@ckb-ccc/connector@0.0.11-alpha.2":
+  version "0.0.11-alpha.2"
+  resolved "https://registry.yarnpkg.com/@ckb-ccc/connector/-/connector-0.0.11-alpha.2.tgz#4be7db554890baf17ca2651035a76b80bf3c94a5"
+  integrity sha512-ZiH7QZfBgF/tXTKhHE3HMFFODDjzZoTqFS7EW5Hz+Q6Gg5v0MQazFlXSGsGWLq4Oz/92QZNMb4l00d845PYVyQ==
   dependencies:
-    "@ckb-ccc/ccc" "0.0.7-alpha.1"
+    "@ckb-ccc/ccc" "0.0.11-alpha.2"
     lit "^3.1.3"
 
-"@ckb-ccc/core@0.0.7-alpha.1", "@ckb-ccc/core@^0.0.7-alpha.1":
-  version "0.0.7-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ckb-ccc/core/-/core-0.0.7-alpha.1.tgz#75c495bd9ebb6fac0969f13e84a8f300f202e623"
-  integrity sha512-L1lIc8a9HqdQ1wOLAaniRhDoLWafHpOZ5n6QsGsaawGgWuHTfrHLFVZx3SHTs0GksBfjXx+BwKs9oV4AO0Zaag==
+"@ckb-ccc/core@0.0.11-alpha.2", "@ckb-ccc/core@^0.0.11-alpha.2":
+  version "0.0.11-alpha.2"
+  resolved "https://registry.yarnpkg.com/@ckb-ccc/core/-/core-0.0.11-alpha.2.tgz#ad8d7f765e5b969490d8902c749a0766a2720304"
+  integrity sha512-Kb0kAE5Hw50I5y2gt4x2lAA/kN5l37FWMhRem/9wYyPuFBi75WAaroNJ/hxt1h8hC0mQyBKAgMZ9fAyLP6Sg9A==
   dependencies:
     "@ckb-lumos/helpers" "^0.22.2"
-    "@joyid/ckb" "^0.0.11"
+    "@joyid/ckb" "^1.0.1"
+    "@noble/ciphers" "^0.5.3"
     "@noble/curves" "^1.4.2"
     "@noble/hashes" "^1.4.0"
     abort-controller "^3.0.0"
@@ -1076,43 +1078,51 @@
     cross-fetch "^4.0.0"
     ethers "^6.13.1"
 
-"@ckb-ccc/eip6963@0.0.7-alpha.1":
-  version "0.0.7-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ckb-ccc/eip6963/-/eip6963-0.0.7-alpha.1.tgz#a78587fcb08073ffd1a29841162d63bd7f49d574"
-  integrity sha512-1q0gTtS7i9tcqFwSZg39JaAMlFWxgVJHgGcrJUgJZW7BQ7tpEHqd36lp3JjI1LZGZHMZBLDUJ11npP8Ij87Wjw==
+"@ckb-ccc/eip6963@0.0.11-alpha.2":
+  version "0.0.11-alpha.2"
+  resolved "https://registry.yarnpkg.com/@ckb-ccc/eip6963/-/eip6963-0.0.11-alpha.2.tgz#a5b075e49c1b04afe4d497b2c6b558b704325c4c"
+  integrity sha512-FHY0nlt4JSY4jrDO4jKAJYbhEYOH5YOeVzpkmP1ZiwPp+RePuFo+Xwceq7HT28bahgGR4Xb/SHUO9/FL/IoBFw==
   dependencies:
-    "@ckb-ccc/core" "0.0.7-alpha.1"
+    "@ckb-ccc/core" "0.0.11-alpha.2"
 
-"@ckb-ccc/joy-id@0.0.7-alpha.1":
-  version "0.0.7-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ckb-ccc/joy-id/-/joy-id-0.0.7-alpha.1.tgz#28d9d1aa679b1a49df5d82e6568d66aef6f03134"
-  integrity sha512-FJodJg20DwAOk1HVhBP3/cziOSary5Ox6MHI3kEmSZVNWpJkwEhXJNIZ/jyR+MxIU6j975UyGgzlgYKCnJ6Mow==
+"@ckb-ccc/joy-id@0.0.11-alpha.2":
+  version "0.0.11-alpha.2"
+  resolved "https://registry.yarnpkg.com/@ckb-ccc/joy-id/-/joy-id-0.0.11-alpha.2.tgz#9daca587c10cca5fa5328286496a5a65f38cac8e"
+  integrity sha512-1lRosBN8D8HMU4RIv6iJZEM6+bI79tJL2uSgtBmDFtdPjWKme/y1RaEDmgV5kYEquxvGPlzjqjr0+y2slJnTFA==
   dependencies:
-    "@ckb-ccc/core" "0.0.7-alpha.1"
-    "@joyid/ckb" "^1.0.0"
+    "@ckb-ccc/core" "0.0.11-alpha.2"
+    "@joyid/ckb" "^1.0.1"
     "@joyid/common" "^0.2.0"
 
-"@ckb-ccc/nip07@0.0.7-alpha.1":
-  version "0.0.7-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ckb-ccc/nip07/-/nip07-0.0.7-alpha.1.tgz#4fb380ce2923b6593ad161f77d05e458971bb3e1"
-  integrity sha512-C6mFV0ZJZA0CjRErHtro9VGTOuyJMjuaFIdBpaNcABbuaywXsOvoZiY+RYYVT9JTTXSX1zYSYlCJvp3Yq4MzNg==
+"@ckb-ccc/nip07@0.0.11-alpha.2":
+  version "0.0.11-alpha.2"
+  resolved "https://registry.yarnpkg.com/@ckb-ccc/nip07/-/nip07-0.0.11-alpha.2.tgz#d1970df2fd10c4e81b131f41ac4123cf8ee0df72"
+  integrity sha512-kH9GgC1VJP1ipjUKJlh5X4A1fxBspp3sOirT58fN+nN71qkcjfz0Gfgok6FrYTKcuWOdzd3ArGCdWnZE+nWnqQ==
   dependencies:
-    "@ckb-ccc/core" "0.0.7-alpha.1"
+    "@ckb-ccc/core" "0.0.11-alpha.2"
 
-"@ckb-ccc/okx@0.0.7-alpha.1":
-  version "0.0.7-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ckb-ccc/okx/-/okx-0.0.7-alpha.1.tgz#034a2cf368271d4b2482cdf8dd8ed5e23e79902b"
-  integrity sha512-h/aopP0LjEfOP4W7E5x8hhpi9XGpfs9edNAgEza7j7e0rv2dzWFjGJPTfaSPKul4LK6q5gu2fXc/J2Yrh1/X1Q==
+"@ckb-ccc/okx@0.0.11-alpha.2":
+  version "0.0.11-alpha.2"
+  resolved "https://registry.yarnpkg.com/@ckb-ccc/okx/-/okx-0.0.11-alpha.2.tgz#bea74251099b099b287baae9a917a7f8a3d5a8cf"
+  integrity sha512-4k4yhnPWkFi2sIZ3F0UqGpxyDKt5AhjNz9Ez38gKqT0HMiNev1L4kcrUC7xJDv/yu7LDqK5T1ZycgvW8NdoInA==
   dependencies:
-    "@ckb-ccc/core" "0.0.7-alpha.1"
-    "@ckb-ccc/uni-sat" "0.0.7-alpha.1"
+    "@ckb-ccc/core" "0.0.11-alpha.2"
+    "@ckb-ccc/nip07" "0.0.11-alpha.2"
+    "@ckb-ccc/uni-sat" "0.0.11-alpha.2"
 
-"@ckb-ccc/uni-sat@0.0.7-alpha.1":
-  version "0.0.7-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ckb-ccc/uni-sat/-/uni-sat-0.0.7-alpha.1.tgz#c58043501dec2357d116780d3f24b314f93a894a"
-  integrity sha512-dulK4I1IMXs583Y69+Ml6JsRkNrmK8P1TDk+7cTtAUE+9r5h6UkENP9s9eVWbZyhaIeTulyqkhBG2/KLEp63YQ==
+"@ckb-ccc/uni-sat@0.0.11-alpha.2":
+  version "0.0.11-alpha.2"
+  resolved "https://registry.yarnpkg.com/@ckb-ccc/uni-sat/-/uni-sat-0.0.11-alpha.2.tgz#e032e8e1e3817e21eb42c437aa1d5db4725cc394"
+  integrity sha512-X4H9K2HPX7MfZ7b2n+lNupQUnC/uviUaqK5yyqJudqwdaY6vfSDRLpePRcrX5xsDWBl5fqNQZ6OIWH+DRVq6kA==
   dependencies:
-    "@ckb-ccc/core" "0.0.7-alpha.1"
+    "@ckb-ccc/core" "0.0.11-alpha.2"
+
+"@ckb-ccc/utxo-global@0.0.11-alpha.2":
+  version "0.0.11-alpha.2"
+  resolved "https://registry.yarnpkg.com/@ckb-ccc/utxo-global/-/utxo-global-0.0.11-alpha.2.tgz#7c1cbabf24f878edcb15516d7ca46f4a3cd7788a"
+  integrity sha512-Ukkt59qaEc00hnP3mYHpalBFP6JKkt2gYWd26ktOwljoCZdX7nHJGOWm1Hy/jQdIKz2U3yEZqL7nbqeT32TRCQ==
+  dependencies:
+    "@ckb-ccc/core" "0.0.11-alpha.2"
 
 "@ckb-lumos/base@0.22.2":
   version "0.22.2"
@@ -1291,6 +1301,11 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.3.1.tgz#d0fce5d07b0620caa282b5131c297bb60f9d87e6"
   integrity sha512-EsBwpc7hBUJWAsNPBmJy4hxWx12v6bshQsldrVmjxJoc3isbxhOrF2IcCpaXxfvq03NwkI7sbsOLXbYuqF/8Ww==
 
+"@esbuild-plugins/node-globals-polyfill@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@esbuild-plugins/node-globals-polyfill/-/node-globals-polyfill-0.2.3.tgz#0e4497a2b53c9e9485e149bc92ddb228438d6bcf"
+  integrity sha512-r3MIryXDeXDOZh7ih1l/yE9ZLORCd5e8vWg02azWRGj5SPTuoh69A2AIyn0Z31V/kHBfZ4HgWJ+OK3GTTwLmnw==
+
 "@esbuild/aix-ppc64@0.21.5":
   version "0.21.5"
   resolved "https://registry.yarnpkg.com/@esbuild/aix-ppc64/-/aix-ppc64-0.21.5.tgz#c7184a326533fcdf1b8ee0733e21c713b975575f"
@@ -1457,33 +1472,15 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-2.0.3.tgz#4a2868d75d6d6963e423bcf90b7fd1be343409d3"
   integrity sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==
 
-"@joyid/ckb@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@joyid/ckb/-/ckb-0.0.11.tgz#562dbdad6305fefa09f2f43500e18efd483dbf66"
-  integrity sha512-Nxl+vHju57qChP+QI3ycnlTpQCLsQc+Kp/YUxjDoPkbHikBXPsKGyvTOgO1RIqZMAoQpYbO6FDt1P+nIVxVVCQ==
-  dependencies:
-    "@joyid/common" "0.0.3"
-    "@nervosnetwork/ckb-sdk-utils" "^0.109.1"
-    cross-fetch "4.0.0"
-    uncrypto "^0.1.3"
-
-"@joyid/ckb@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@joyid/ckb/-/ckb-1.0.0.tgz#746141eb909282460032008642b065fc961965ee"
-  integrity sha512-uJocaVSN9sBXun/ANkNohZtG8ByfC7B3PZtCrmhzEQ6etpbPa6ByGMZZubIFwjOG5i1ynPWXLvAi8CW2SKOmCw==
+"@joyid/ckb@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@joyid/ckb/-/ckb-1.0.1.tgz#837acecbfd5b120a8702d363384d888d7b25c7b3"
+  integrity sha512-pKAJouigChqcwKgtLw4RNOwi+nBh3NVjpU+qZd+uu3wmoTpivnSRLbJH8/SlkgQcWn2aJ+mDJchR8GpQYh5H6Q==
   dependencies:
     "@joyid/common" "0.2.0"
-    "@nervosnetwork/ckb-sdk-utils" "^0.109.1"
+    "@nervosnetwork/ckb-sdk-utils" "^0.109.2"
     cross-fetch "4.0.0"
     uncrypto "^0.1.3"
-
-"@joyid/common@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@joyid/common/-/common-0.0.3.tgz#09bdf852a4ea40011b417ad1356a832787c9cc36"
-  integrity sha512-bih1dRqFpNP6tLNpebO2pp72r8L9WFtlGUa7a2x3l336G66ieS1uyNGb/yZzY+f3Fs1E40s10m7D+qSnfwtjJQ==
-  dependencies:
-    abitype "0.8.7"
-    type-fest "4.6.0"
 
 "@joyid/common@0.2.0", "@joyid/common@^0.2.0":
   version "0.2.0"
@@ -1542,21 +1539,26 @@
   dependencies:
     "@lit-labs/ssr-dom-shim" "^1.2.0"
 
-"@nervosnetwork/ckb-sdk-utils@^0.109.1":
-  version "0.109.1"
-  resolved "https://registry.yarnpkg.com/@nervosnetwork/ckb-sdk-utils/-/ckb-sdk-utils-0.109.1.tgz#f35d92a96b377f0e6979db609098227001a5e7a5"
-  integrity sha512-KK8w+JZGPt/Gq/Y0b87AuQp8mGR46fBSkqnjwASdBAi2rts9tJ6srEaZ3FVVa9LtjTlThQ120hex+mcyastrkQ==
+"@nervosnetwork/ckb-sdk-utils@^0.109.2":
+  version "0.109.3"
+  resolved "https://registry.yarnpkg.com/@nervosnetwork/ckb-sdk-utils/-/ckb-sdk-utils-0.109.3.tgz#19dafa7608d703456043d1f24cce8256ff1bc28d"
+  integrity sha512-sV3WXlZmd765qtFsXpwl0Bl3hOgGev15Og810acO6iC0cVHEVvv/Uiabd8a2xkqyfziRDI0tfWC0DewOJB28rg==
   dependencies:
-    "@nervosnetwork/ckb-types" "0.109.1"
+    "@nervosnetwork/ckb-types" "0.109.3"
     bech32 "2.0.0"
     elliptic "6.5.4"
     jsbi "3.1.3"
     tslib "2.3.1"
 
-"@nervosnetwork/ckb-types@0.109.1":
-  version "0.109.1"
-  resolved "https://registry.yarnpkg.com/@nervosnetwork/ckb-types/-/ckb-types-0.109.1.tgz#1e8b0abe0ae0227306d6a3f65cb670bcd4cf276f"
-  integrity sha512-mD5mOCGa1JertKZekHSUVYwFPW27VJ0/MdwblWvEEK7pNIU6az+dLiIxgvl4TxR+j+7/GqmXNH1U59CM92y/wg==
+"@nervosnetwork/ckb-types@0.109.3":
+  version "0.109.3"
+  resolved "https://registry.yarnpkg.com/@nervosnetwork/ckb-types/-/ckb-types-0.109.3.tgz#730bd21d2b90dc3cfb491639381b93a82ea2ae54"
+  integrity sha512-i9EVTXCT0bTLpAQXAoF5zHGLWYCXNE5AP4Zl0Niwl3ZplaVAZHNU6ygsh2O3EGmCFv5qlkoY2DuLmsjysEaNLA==
+
+"@noble/ciphers@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@noble/ciphers/-/ciphers-0.5.3.tgz#48b536311587125e0d0c1535f73ec8375cd76b23"
+  integrity sha512-B0+6IIHiqEs3BPMT0hcRmHvEj2QHOLu+uwt+tqDDeVd0oyVzh7BPrDcPjRnV1PV/5LaknXJJQvOuRGR0zQJz+w==
 
 "@noble/curves@1.2.0":
   version "1.2.0"
@@ -2454,8 +2456,7 @@ buffer-equals@^1.0.3:
   resolved "https://registry.yarnpkg.com/buffer-equals/-/buffer-equals-1.0.4.tgz#0353b54fd07fd9564170671ae6f66b9cf10d27f5"
   integrity sha512-99MsCq0j5+RhubVEtKQgKaD6EM+UP3xJgIvQqwJ3SOLDUekzxMX1ylXBng+Wa2sh7mGT0W6RUly8ojjr1Tt6nA==
 
-"buffer-polyfill@npm:buffer@^6.0.3", buffer@^6.0.3:
-  name buffer-polyfill
+"buffer-polyfill@npm:buffer@^6.0.3":
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/buffer/-/buffer-6.0.3.tgz#2ace578459cc8fbe2a70aaa8f52ee63b6a74c6c6"
   integrity sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==
@@ -2475,6 +2476,14 @@ buffer@^5.7.1:
   dependencies:
     base64-js "^1.3.1"
     ieee754 "^1.1.13"
+
+buffer@^6.0.3:
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/buffer/-/buffer-6.0.3.tgz#2ace578459cc8fbe2a70aaa8f52ee63b6a74c6c6"
+  integrity sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==
+  dependencies:
+    base64-js "^1.3.1"
+    ieee754 "^1.2.1"
 
 builtin-status-codes@^3.0.0:
   version "3.0.0"
