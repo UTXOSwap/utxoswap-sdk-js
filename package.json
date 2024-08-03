@@ -1,5 +1,5 @@
 {
-  "version": "0.1.7",
+  "version": "0.1.8",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -48,7 +48,7 @@
     "@nervosnetwork/ckb-sdk-core": "0.109.1",
     "@nervosnetwork/ckb-sdk-rpc": "0.109.1",
     "@nervosnetwork/ckb-types": "0.109.1",
-    "@rgbpp-sdk/ckb": "^0.3.0",
+    "@rgbpp-sdk/ckb": "0.0.0-snap-20240719061748",
     "axios": "^1.7.2",
     "bignumber.js": "^9.1.2"
   },
