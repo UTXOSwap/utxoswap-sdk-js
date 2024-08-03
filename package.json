@@ -1,5 +1,5 @@
 {
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -47,7 +47,7 @@
     "@ckb-lumos/lumos": "^0.23.0",
     "@nervosnetwork/ckb-sdk-core": "0.109.1",
     "@nervosnetwork/ckb-sdk-rpc": "0.109.1",
-    "@nervosnetwork/ckb-sdk-utils": "0.109.1",
+    "@nervosnetwork/ckb-sdk-utils": "0.109.3",
     "@nervosnetwork/ckb-types": "0.109.1",
     "@rgbpp-sdk/ckb": "^0.4.0",
     "axios": "^1.7.2",
