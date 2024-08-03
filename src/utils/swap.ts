@@ -144,7 +144,7 @@ const swapCKBToUDT = async (
   const desiredCKBAmount = bigNumberToBigInt(ckbToken.amount, CKB_DECIMALS);
 
   const needCKBCellCapacity =
-    INTENT_LOCK_CKB_CELL_CAPACITY_FOR_SWAP + desiredCKBAmount;
+    INTENT_LOCK_CKB_CELL_CAPACITY_FOR_SWAP(fromLock) + desiredCKBAmount;
 
   let actualInputsCapacity = BigInt(0);
 
@@ -165,7 +165,9 @@ const swapCKBToUDT = async (
         args: append0x(createPoolIntentBuffer.toString('hex')),
       },
       capacity: append0x(
-        (INTENT_LOCK_CKB_CELL_CAPACITY_FOR_SWAP + desiredCKBAmount).toString(16)
+        (
+          INTENT_LOCK_CKB_CELL_CAPACITY_FOR_SWAP(fromLock) + desiredCKBAmount
+        ).toString(16)
       ),
     },
   ];
