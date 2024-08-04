@@ -10,6 +10,7 @@ import {
   MenuList,
   MenuItem,
   useToast,
+  Image,
 } from '@chakra-ui/react';
 import { ccc } from '@ckb-ccc/connector-react';
 import {
@@ -27,8 +28,8 @@ import {
 } from './utils';
 import { TransactionLike } from '@ckb-ccc/core';
 
-const isMainnet = true;
-const ckbIndexerUrl = 'https://mainnet.ckbapp.dev';
+const isMainnet = false;
+const ckbIndexerUrl = 'https://testnet.ckbapp.dev';
 const testApiKey = 'cYztRDvbH9sDaH2HV2Ut4TpIioYVyG07pUz46Dz1';
 
 const ckb = {
@@ -45,18 +46,12 @@ const collector = new Collector({ ckbIndexerUrl });
 /// for utxo swap backend service
 const client = new Client(isMainnet, testApiKey);
 
-const cli = new ccc.ClientPublicTestnet();
-const signer = new ccc.SignerCkbPrivateKey(
-  cli,
-  ''
-);
-
 export default function App() {
   const toast = useToast();
   /// use CCC connector
-  // const { wallet, open, setClient } = ccc.useCcc();
-  // const signer = ccc.useSigner();
-  // const [internalAddress, setInternalAddress] = useState('');
+  const { wallet, open, setClient } = ccc.useCcc();
+  const signer = ccc.useSigner();
+  const [internalAddress, setInternalAddress] = useState('');
   const [address, setAddress] = useState('');
 
   /// tokens info
@@ -70,11 +65,27 @@ export default function App() {
   const [inputValue, setInputValue] = useState('');
   const [intentHash, setIntentHash] = useState('');
 
+  /// effect for ccc signer
   useEffect(() => {
+    if (!signer) {
+      setInternalAddress('');
+      setAddress('');
+      setCKBBalance(BigInt(0));
+      setIntentHash('');
+      return;
+    }
+
     (async () => {
+      setInternalAddress(await signer.getInternalAddress());
       setAddress(await signer.getRecommendedAddress());
     })();
-  }, []);
+  }, [signer]);
+
+  useEffect(() => {
+    setClient(
+      isMainnet ? new ccc.ClientPublicMainnet() : new ccc.ClientPublicTestnet()
+    );
+  }, [setClient]);
 
   useEffect(() => {
     if (!address) {
@@ -149,12 +160,9 @@ export default function App() {
   };
 
   const signTxFunc = async (rawTx: CKBComponents.RawTransactionToSign) => {
-    // const txLike = await signer!.signTransaction(rawTx as TransactionLike);
-
     const txLike = await signer!.signTransaction(rawTx as TransactionLike);
 
     return transactionFormatter(txLike);
-    // return transactionFormatter(txLike);
   };
 
   const swapCKBToTBtc = async () => {
@@ -182,11 +190,21 @@ export default function App() {
         <Text fontSize="32px" mt="40px">
           UTXOSwap SDK Demo
         </Text>
-
+        {wallet ? (
+          <>
+            <Image src={wallet.icon} alt={wallet.name} w="60px" h="60px" />
+            <Text>{internalAddress}</Text>
+            <Text>{address}</Text>
+            <Button onClick={open}>
+              {internalAddress.slice(0, 7)}...{internalAddress.slice(-5)}
+            </Button>
+          </>
+        ) : (
+          <Button onClick={open}>Connect Wallet</Button>
+        )}
         {address ? (
           <>
             <Text>
-              CKB Address: {address}
               CKB Balance: {formatBigIntWithDecimal(ckbBalance, ckb.decimals)}
             </Text>
 
