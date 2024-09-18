@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.9](https://github.com/UTXOSwap/utxoswap-sdk-js/compare/v0.1.8...v0.1.9) (2024-09-18)
+
+
+### Bug Fixes
+
+* rgbpp-sdk hotfix ([f81c9df](https://github.com/UTXOSwap/utxoswap-sdk-js/commit/f81c9dfdc055fd5587232697802945afe63e78c7))
+
 ### [0.1.8](https://github.com/UTXOSwap/utxoswap-sdk-js/compare/v0.1.7...v0.1.8) (2024-08-03)
 
 ### [0.1.7](https://github.com/UTXOSwap/utxoswap-sdk-js/compare/v0.1.6...v0.1.7) (2024-08-03)
