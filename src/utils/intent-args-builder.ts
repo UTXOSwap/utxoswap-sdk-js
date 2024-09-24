@@ -80,20 +80,13 @@ export const calculateSwapTokenIntentArgs = (
 
   index += 8;
 
-  swapTokenIntentBuffer.write(
-    rawIntentArgs.intent_type.toString(16),
-    index,
-    1,
-    'hex'
-  );
+  swapTokenIntentBuffer.writeUint8(rawIntentArgs.intent_type, index);
 
   index += 1;
 
-  swapTokenIntentBuffer.write(
-    rawIntentArgs.intent_data.asset_in_index.toString(16),
-    index,
-    1,
-    'hex'
+  swapTokenIntentBuffer.writeUint8(
+    rawIntentArgs.intent_data.asset_in_index,
+    index
   );
 
   index += 1;
