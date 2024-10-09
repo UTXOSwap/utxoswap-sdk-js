@@ -1,9 +1,9 @@
 import BigNumber from 'bignumber.js';
-import { bigNumberToBigInt } from './formatter';
-import { IntentType, PoolInfo, Token } from '../types';
+import { bigNumberToBigInt } from '../formatter';
+import { IntentType, PoolInfo, Token } from '../../types';
 import { append0x, remove0x, u128ToLe } from '@rgbpp-sdk/ckb';
 import { scriptToHash } from '@nervosnetwork/ckb-sdk-utils';
-import { SWAP_EXACT_INPUT_FOR_OUTPUT_INTENT_ARGS_BUFFER_LENGTH } from '../constant';
+import { SWAP_EXACT_INPUT_FOR_OUTPUT_INTENT_ARGS_BUFFER_LENGTH } from '../../constant';
 
 export const calculateSwapTokenIntentArgs = (
   fromLock: CKBComponents.Script,

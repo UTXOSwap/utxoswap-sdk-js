@@ -1,4 +1,5 @@
 import BigNumber from 'bignumber.js';
+import { Token } from '../types';
 
 export const bigNumberToBigInt = (
   value: BigNumber.Value = 0,
@@ -21,3 +22,14 @@ export function getTokenUnits(
 
   return actualAmount.toFixed(decimal).replace(/\.?0+$/, '');
 }
+
+export const swapTokens = (tokens: Token[]) => {
+  /// [XUDT, CKB] -> [CKB, XUDT]
+  const [tokenX, tokenY] = tokens;
+
+  if (tokenX.typeHash > tokenY.typeHash) {
+    return [tokenY, tokenX];
+  }
+
+  return tokens;
+};

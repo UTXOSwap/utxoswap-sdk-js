@@ -10,18 +10,18 @@ import {
   DEFAULT_FEE_DENOMINATOR,
   INTENT_LOCK_CKB_CELL_CAPACITY_FOR_SWAP,
   INTENT_LOCK_UDT_CELL_CAPACITY_FOR_SWAP,
-} from '../constant';
-import { PoolInfo, SignTransactionFunc, Token } from '../types';
-import { bigNumberToBigInt, getTokenUnits } from './formatter';
-import { Client, Collector } from '../entities';
+} from '../../constant';
+import { PoolInfo, SignTransactionFunc, Token } from '../../types';
+import { bigNumberToBigInt, getTokenUnits } from '../../utils/formatter';
+import { Client, Collector } from '../../entities';
 import {
   calculateUdtCellCapacity,
   collectInputs,
   collectUdtInputs,
   getCellsByTypeHash,
-} from './cells-collector';
-import { calculateSwapTokenIntentArgs } from './intent-args-builder';
-import { appendCellDepsAndWitnessToUnsignedTx } from './transaction-addons';
+} from '../../utils/cells-collector';
+import { calculateSwapTokenIntentArgs } from './swap-intent-args';
+import { appendCellDepsAndWitnessToUnsignedTx } from '../../utils/transaction-addons';
 
 export function getAmountOut(
   amountIn: bigint,

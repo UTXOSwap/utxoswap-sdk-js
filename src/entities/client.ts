@@ -68,24 +68,6 @@ export class Client {
     return res.data.data;
   };
 
-  swapExactInputForOutput = async (tx: Hex) => {
-    const apiKey = this.apiKey;
-    const res = await axios<Response<IntentResponse>>(
-      '/api/v1/sequencer/intent/swap_exact_input_for_output',
-      {
-        baseURL: this.url,
-        timeout: this.timeout,
-        method: 'post',
-        headers: {
-          'x-api-key': apiKey,
-        },
-        data: { tx },
-      }
-    );
-
-    return res.data.data;
-  };
-
   getPoolsByToken = async ({
     pageNo,
     pageSize,
@@ -113,6 +95,42 @@ export class Client {
           poolTypeHashes,
           searchKey,
         },
+      }
+    );
+
+    return res.data.data;
+  };
+
+  swapExactInputForOutput = async (tx: Hex) => {
+    const apiKey = this.apiKey;
+    const res = await axios<Response<IntentResponse>>(
+      '/api/v1/sequencer/intent/swap_exact_input_for_output',
+      {
+        baseURL: this.url,
+        timeout: this.timeout,
+        method: 'post',
+        headers: {
+          'x-api-key': apiKey,
+        },
+        data: { tx },
+      }
+    );
+
+    return res.data.data;
+  };
+
+  createPool = async (tx: Hex) => {
+    const apiKey = this.apiKey;
+    const res = await axios<Response<IntentResponse>>(
+      '/api/v1/sequencer/pool/create',
+      {
+        baseURL: this.url,
+        timeout: this.timeout,
+        method: 'post',
+        headers: {
+          'x-api-key': apiKey,
+        },
+        data: { tx },
       }
     );
 

@@ -3,6 +3,7 @@ import { PoolInfo, SignTransactionFunc, Token } from '../types';
 import { Collector } from './collector';
 import {
   calculateOutputAndPriceImpactWithExactInput,
+  exactCreatePool,
   exactInputForOutput,
 } from '../utils';
 import { Client } from './client';
@@ -11,7 +12,7 @@ export class Pool {
   private ckbAddress: string;
   private collector: Collector;
   private client: Client;
-  private poolInfo: PoolInfo;
+  private poolInfo?: PoolInfo;
   public tokens: [Token, Token];
 
   public constructor({
@@ -25,7 +26,7 @@ export class Pool {
     ckbAddress: string;
     collector: Collector;
     client: Client;
-    poolInfo: PoolInfo;
+    poolInfo?: PoolInfo;
   }) {
     invariant(tokens.length === 2, "Expect tokens's length equal to 2.");
     this.tokens = tokens;
@@ -72,6 +73,26 @@ export class Pool {
       this.ckbAddress,
       this.tokens,
       this.poolInfo,
+      this.collector,
+      this.client,
+      signTxFunc
+    );
+
+    return intentTxHash;
+  }
+
+  public async createPool(signTxFunc: SignTransactionFunc, feeRate = 5000) {
+    invariant(this.tokens.length === 2, "Expect tokens's length equal to 2.");
+    invariant(
+      this.tokens[0].amount && this.tokens[1].amount,
+      'Please enter the amount of tokens.'
+    );
+    invariant(feeRate >= 5000, 'Fee rate must equal to or bigger than 5000.');
+
+    const intentTxHash = await exactCreatePool(
+      BigInt(feeRate),
+      this.ckbAddress,
+      this.tokens,
       this.collector,
       this.client,
       signTxFunc
