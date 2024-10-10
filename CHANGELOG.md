@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.11](https://github.com/UTXOSwap/utxoswap-sdk-js/compare/v0.1.10...v0.1.11) (2024-10-10)
+
+
+### Features
+
+* create pool ([b3938db](https://github.com/UTXOSwap/utxoswap-sdk-js/commit/b3938db0cae6328319404ea84a488c74a7677c11))
+* create pool with dmeo ([9cb9176](https://github.com/UTXOSwap/utxoswap-sdk-js/commit/9cb9176fac95f9ca26645b4dfb9e466959e048be))
+
 ### [0.1.10](https://github.com/UTXOSwap/utxoswap-sdk-js/compare/v0.0.1...v0.1.10) (2024-09-24)
 
 ### [0.1.9](https://github.com/UTXOSwap/utxoswap-sdk-js/compare/v0.1.8...v0.1.9) (2024-09-18)
