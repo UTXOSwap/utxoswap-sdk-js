@@ -68,6 +68,10 @@ export interface PoolsResponse {
   totalCount: number;
 }
 
+export interface TokenResponse {
+  list: Array<Token>;
+}
+
 export interface SequencerConfigurations {
   allowedFeeRates: number[];
   protocolFeePercent: number;

@@ -22,7 +22,7 @@ import {
   getTokenBalance,
   transactionFormatter,
 } from './utils';
-import { ckb, client, collector } from './constants';
+import { CKB, client, collector } from './constants';
 
 export default function Swap({ address }: { address: string }) {
   const toast = useToast();
@@ -49,7 +49,7 @@ export default function Swap({ address }: { address: string }) {
       const { list: pools } = await client.getPoolsByToken({
         pageNo: 0,
         pageSize: 10,
-        searchKey: ckb.typeHash,
+        searchKey: CKB.typeHash,
       });
 
       setPoolsWithCkb(pools);
@@ -148,7 +148,7 @@ export default function Swap({ address }: { address: string }) {
       </Text>
 
       <Text>
-        CKB Balance: {formatBigIntWithDecimal(ckbBalance, ckb.decimals)}
+        CKB Balance: {formatBigIntWithDecimal(ckbBalance, CKB.decimals)}
       </Text>
 
       <Menu>
@@ -173,7 +173,7 @@ export default function Swap({ address }: { address: string }) {
           </Text>
           <Text fontSize="14px">
             Available CKB Amount:{' '}
-            {formatBigIntWithDecimal(ckbAvailableBalance, ckb.decimals)}
+            {formatBigIntWithDecimal(ckbAvailableBalance, CKB.decimals)}
           </Text>
           <Input
             w="40%"

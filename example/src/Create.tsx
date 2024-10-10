@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Divider,
   HStack,
@@ -9,27 +9,21 @@ import {
   Input,
   Button,
   useToast,
+  Select,
 } from '@chakra-ui/react';
 import { Pool } from '@utxoswap/swap-sdk-js';
-import { ckb, client, collector, isMainnet } from './constants';
+import { CKB, client, collector, tBTC } from './constants';
 import { transactionFormatter } from './utils';
 import { ccc, TransactionLike } from '@ckb-ccc/connector-react';
-import { getXudtTypeScript } from '@rgbpp-sdk/ckb';
 
 export default function Create({ address }: { address: string }) {
   const toast = useToast();
   const signer = ccc.useSigner();
 
-  const [tokenXSymbol, setTokenXSymbol] = useState(ckb.symbol);
+  const [tokenXSymbol, setTokenXSymbol] = useState(CKB.symbol);
   const [tokenXAmount, setTokenXAmount] = useState('');
-  const [tokenXDecimals, setTokenXDecimals] = useState(`${ckb.decimals}`);
-  const [tokenXArgs, setTokenXArgs] = useState('');
-  const [tokenXTypeHash, setTokenXTypeHash] = useState(ckb.typeHash);
 
-  const [tokenYSymbol, setTokenYSymbol] = useState('');
   const [tokenYAmount, setTokenYAmount] = useState('');
-  const [tokenYDecimals, setTokenYDecimals] = useState('');
-  const [tokenYArgs, setTokenYArgs] = useState('');
   const [tokenYTypeHash, setTokenYTypeHash] = useState('');
 
   const [intentHash, setIntentHash] = useState('');
@@ -42,16 +36,7 @@ export default function Create({ address }: { address: string }) {
   };
 
   const handleCreatePool = async () => {
-    if (
-      !tokenXSymbol ||
-      !tokenXAmount ||
-      !tokenXDecimals ||
-      !tokenXTypeHash ||
-      !tokenYSymbol ||
-      !tokenYAmount ||
-      !tokenYDecimals ||
-      !tokenYTypeHash
-    ) {
+    if (!tokenXSymbol || !tokenYAmount || !tokenYTypeHash) {
       toast({
         title: 'Error',
         status: 'error',
@@ -61,31 +46,31 @@ export default function Create({ address }: { address: string }) {
     }
     try {
       setCreateLoading(true);
-      const tokenXTypeScript: CKBComponents.Script = {
-        ...getXudtTypeScript(isMainnet),
-        args: tokenXArgs,
-      };
-      const tokenYTypeScript: CKBComponents.Script = {
-        ...getXudtTypeScript(isMainnet),
-        args: tokenYArgs,
-      };
+
+      const { list } = await client.getTokenByTypeHash(tokenYTypeHash);
+
+      if (list.length === 0) {
+        toast({
+          title: 'Error',
+          status: 'error',
+          description:
+            'Token Y not found, please check the type hash or try again',
+        });
+        return;
+      }
+
+      const tokenX = tokenXSymbol === CKB.symbol ? CKB : tBTC;
+      const tokenY = list[0];
+
       const pool = new Pool({
         tokens: [
           {
-            symbol: tokenXSymbol,
+            ...tokenX,
             amount: tokenXAmount,
-            decimals: parseInt(tokenXDecimals),
-            typeHash: tokenXTypeHash,
-            typeScript:
-              tokenXTypeHash === ckb.typeHash ? undefined : tokenXTypeScript,
           },
           {
-            symbol: tokenYSymbol,
+            ...tokenY,
             amount: tokenYAmount,
-            decimals: parseInt(tokenYDecimals),
-            typeHash: tokenYTypeHash,
-            typeScript:
-              tokenYTypeHash === ckb.typeHash ? undefined : tokenYTypeScript,
           },
         ],
         ckbAddress: address,
@@ -114,85 +99,29 @@ export default function Create({ address }: { address: string }) {
         Create Pool
       </Text>
 
-      <HStack justify="space-between" w="full" px="100px">
+      <HStack justify="center" w="full">
         <VStack w="40%">
           <Text>Token X</Text>
-          <InputGroup>
-            <InputLeftAddon w="100px">Symbol</InputLeftAddon>
-            <Input
-              type="text"
-              value={tokenXSymbol}
-              onChange={e => setTokenXSymbol(e.target.value)}
-              placeholder="Symbol"
-            />
-          </InputGroup>
+          <Select
+            value={tokenXSymbol}
+            onChange={e => setTokenXSymbol(e.target.value)}
+          >
+            <option value="option1">CKB</option>
+            <option value="option2">tBTC</option>
+          </Select>
           <InputGroup>
             <InputLeftAddon w="100px">Amount</InputLeftAddon>
             <Input
-              type="number"
+              type="text"
               value={tokenXAmount}
               onChange={e => setTokenXAmount(e.target.value)}
               placeholder="Amount"
             />
           </InputGroup>
-          <InputGroup>
-            <InputLeftAddon w="100px">Decimals</InputLeftAddon>
-            <Input
-              type="number"
-              value={tokenXDecimals}
-              onChange={e => setTokenXDecimals(e.target.value)}
-              placeholder="Decimals"
-            />
-          </InputGroup>
-          <InputGroup>
-            <InputLeftAddon w="100px">TypeHash</InputLeftAddon>
-            <Input
-              type="text"
-              value={tokenXTypeHash}
-              onChange={e => setTokenXTypeHash(e.target.value)}
-              placeholder="TypeHash"
-            />
-          </InputGroup>
-          <InputGroup>
-            <InputLeftAddon w="100px">Args</InputLeftAddon>
-            <Input
-              type="text"
-              value={tokenXArgs}
-              onChange={e => setTokenXArgs(e.target.value)}
-              placeholder="Args (Unnecessary if token is ckb)"
-            />
-          </InputGroup>
         </VStack>
-        <Text>{'<-->'}</Text>
+        <Text mx="40px">+</Text>
         <VStack w="40%">
           <Text>Token Y</Text>
-          <InputGroup>
-            <InputLeftAddon w="100px">Symbol</InputLeftAddon>
-            <Input
-              type="text"
-              value={tokenYSymbol}
-              onChange={e => setTokenYSymbol(e.target.value)}
-              placeholder="Symbol"
-            />
-          </InputGroup>
-          <InputGroup>
-            <InputLeftAddon w="100px">Amount</InputLeftAddon>
-            <Input
-              type="number"
-              value={tokenYAmount}
-              onChange={e => setTokenYAmount(e.target.value)}
-              placeholder="Amount"
-            />
-          </InputGroup>
-          <InputGroup>
-            <InputLeftAddon w="100px">Decimals</InputLeftAddon>
-            <Input
-              type="number"
-              value={tokenYDecimals}
-              onChange={e => setTokenYDecimals(e.target.value)}
-              placeholder="Decimals"
-            />
-          </InputGroup>
           <InputGroup>
             <InputLeftAddon w="100px">TypeHash</InputLeftAddon>
             <Input
@@ -203,12 +132,12 @@ export default function Create({ address }: { address: string }) {
             />
           </InputGroup>
           <InputGroup>
-            <InputLeftAddon w="100px">Args</InputLeftAddon>
+            <InputLeftAddon w="100px">Amount</InputLeftAddon>
             <Input
-              type="text"
-              value={tokenYArgs}
-              onChange={e => setTokenYArgs(e.target.value)}
-              placeholder="Args (Unnecessary if token is ckb)"
+              type="number"
+              value={tokenYAmount}
+              onChange={e => setTokenYAmount(e.target.value)}
+              placeholder="Amount"
             />
           </InputGroup>
         </VStack>

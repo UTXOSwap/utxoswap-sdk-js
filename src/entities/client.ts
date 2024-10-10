@@ -7,6 +7,7 @@ import {
   PoolsResponse,
   SequencerConfigurations,
   Token,
+  TokenResponse,
 } from '../types';
 
 interface Response<T> {
@@ -27,6 +28,26 @@ export class Client {
     this.apiKey = apiKey;
     this.timeout = timeout;
   }
+
+  getTokenByTypeHash = async (typeHash: string) => {
+    const apiKey = this.apiKey;
+    const res = await axios<Response<TokenResponse>>(
+      '/api/v1/sequencer/tokens',
+      {
+        baseURL: this.url,
+        timeout: this.timeout,
+        method: 'post',
+        headers: {
+          'x-api-key': apiKey,
+        },
+        data: {
+          query: typeHash,
+        },
+      }
+    );
+
+    return res.data.data;
+  };
 
   getPoolByTokens = async (tokens: [Token, Token]) => {
     const apiKey = this.apiKey;
