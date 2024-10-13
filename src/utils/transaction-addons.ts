@@ -20,7 +20,7 @@ export const getCCBTCCellDeps = (isMainnet: boolean): CKBComponents.CellDep => {
     : {
         outPoint: {
           txHash:
-            '0x877c4c3c6f7159f29ea711f0cd21a54f93dcf950642c6a3a5abc9c070051372e',
+            '0xed7d65b9ad3d99657e37c4285d585fea8a5fcaf58165d54dacf90243f911548b',
           index: '0x0',
         },
         depType: 'code',
