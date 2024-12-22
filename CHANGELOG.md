@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.12](https://github.com/UTXOSwap/utxoswap-sdk-js/compare/v0.1.11...v0.1.12) (2024-12-22)
+
+
+### Bug Fixes
+
+* support usdi & rusd ([7bd90d0](https://github.com/UTXOSwap/utxoswap-sdk-js/commit/7bd90d084f7a74115bf013336ea6ba7262ab9556))
+
 ### [0.1.11](https://github.com/UTXOSwap/utxoswap-sdk-js/compare/v0.1.10...v0.1.11) (2024-10-10)
 
 
