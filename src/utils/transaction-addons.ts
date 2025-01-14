@@ -79,7 +79,7 @@ export const getUSDICellDeps = (isMainnet: boolean): CKBComponents.CellDep => {
     : {
         outPoint: {
           txHash:
-            '0x03d029480416c2fc927dfbfe0ed1916ffaf55d1e1f3146c55cf2d3dd5e674e61',
+            '0xaec423c2af7fe844b476333190096b10fc5726e6d9ac58a9b71f71ffac204fee',
           index: '0x0',
         },
         depType: 'code',
