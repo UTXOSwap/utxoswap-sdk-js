@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.14](https://github.com/UTXOSwap/utxoswap-sdk-js/compare/v0.1.13...v0.1.14) (2025-01-14)
+
+
+### Bug Fixes
+
+* update usdi cell dep ([d8bbebb](https://github.com/UTXOSwap/utxoswap-sdk-js/commit/d8bbebb32daffb0d6026d23484e3662bfc23b3d9))
+
 ### [0.1.13](https://github.com/UTXOSwap/utxoswap-sdk-js/compare/v0.1.12...v0.1.13) (2024-12-22)
 
 ### [0.1.12](https://github.com/UTXOSwap/utxoswap-sdk-js/compare/v0.1.11...v0.1.12) (2024-12-22)
